@@ -75,7 +75,7 @@ header a {
   font-size: 14px;
 }
 
-.nav-item > a {
+header .nav-item > a {
   margin: 0px 16px;
 } */
 
@@ -212,13 +212,11 @@ h1 {
     display: inline;
   }
 
-  .navbar:hover .logo svg
-  {
+  .navbar:hover .logo svg {
     margin-left: 11rem;
   }
 
-  .navbar:hover .logo-text
-  {
+  .navbar:hover .logo-text {
     left: 0px;
   }
 }
@@ -246,7 +244,6 @@ h1 {
     margin: 0;
   }
 }
-
 
 /* svg {
   height: 50px;
