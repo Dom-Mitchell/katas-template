@@ -31,6 +31,54 @@ html {
   height: 100%;
 }
 
+/* header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.75);
+  background-clip: padding-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+  padding: 10px 0px 10px 0;
+}
+
+header nav {
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo svg {
+  margin-right: 8px;
+}
+
+header h1 {
+  font-size: 16px;
+}
+
+header a {
+  color: #24292e;
+  line-height: 1.5;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-item > a {
+  margin: 0px 16px;
+} */
+
 body {
   color: white;
   background-color: #303133;
@@ -54,12 +102,19 @@ main {
   margin-left: 5rem;
 }
 
+main p,
+h1 {
+  padding-left: 20px;
+}
+
 .navbar {
+  top: 0;
   width: 5rem;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   background-color: var(--bg-primary);
   transition: width 200ms ease;
+  /* overflow: scroll; */
 }
 
 .navbar-nav {
@@ -69,6 +124,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100%;
 }
 
 .nav-item {
@@ -76,7 +132,7 @@ main {
 }
 
 .nav-item:last-child {
-  margin-top: 150px;
+  margin-top: auto;
 }
 
 .nav-link {
@@ -101,6 +157,7 @@ main {
 }
 
 .nav-link svg {
+  width: 2rem;
   min-width: 2rem;
   margin: 0 1.5rem;
 }
@@ -114,7 +171,7 @@ main {
   display: block;
 }
 
-.logo {
+.double-arrow {
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -126,18 +183,74 @@ main {
   width: 100%;
 }
 
-.logo svg {
+.double-arrow svg {
   transform: rotate(0deg);
   transition: transform var(--transition-speed);
 }
 
-.navbar:hover .logo svg {
+.logo-text {
+  display: none;
+  transition: var(--transition-speed);
+}
+
+.navbar:hover .double-arrow svg {
   transform: rotate(-180deg);
 }
 
-svg {
-  height: 50px;
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+  }
+
+  .navbar:hover {
+    width: 16rem;
+  }
+
+  .navbar:hover .link-text {
+    display: inline;
+  }
+
+  .navbar:hover .logo svg
+  {
+    margin-left: 11rem;
+  }
+
+  .navbar:hover .logo-text
+  {
+    left: 0px;
+  }
 }
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+  main {
+    margin: 0;
+  }
+}
+
+
+/* svg {
+  height: 50px;
+} */
 
 /* footer {
   text-align: center;
